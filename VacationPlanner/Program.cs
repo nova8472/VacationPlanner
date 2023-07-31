@@ -1,5 +1,4 @@
-﻿using VacationPlanner;
-using static VacationPlanner.Enums;
+﻿using VacationPlanner.Core;
 
 // INPUT
 const ushort VACATION_DAYS = 20;
