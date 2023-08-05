@@ -1,6 +1,6 @@
 ﻿namespace VacationPlanner.Core
 {
-    internal class Planner
+    public class Planner
     {
         private readonly PlanningStrategy _planningStrategy;
         private readonly ushort _vacationDays;
@@ -74,7 +74,14 @@
                 }
             }
 
-            return workdayGaps;
+			if (gapSize > 0)
+			{
+				WorkdayGap gap = new(gapStart, gapEnd, gapSize);
+
+				workdayGaps.Add(gap);
+			}
+
+			return workdayGaps;
         }
 
         private static List<DateTime> GetVacationDatesForSmallestGapFirstStrategy(List<WorkdayGap> workdayGaps, ushort vacationDays)
